@@ -7,15 +7,17 @@
 #include <random>
 #include  <iterator>
 
-std::vector<std::string>::iterator TextGen::select_randomly(std::vector<std::string>::iterator start, 
-                                                            std::vector<std::string>::iterator end, std::mt19937& g) {
+//Copyright 2024
+
+std::vector<std::string>::iterator TextGen::select_randomly
+(std::vector<std::string>::iterator start, std::vector<std::string>::iterator end, std::mt19937& g) {
     std::uniform_int_distribution<> dis(0, std::distance(start, end) - 1);
     std::advance(start, dis(g));
     return start;
 }
 
-std::vector<std::string>::iterator TextGen::select_randomly(std::vector<std::string>::iterator start, 
-                                                            std::vector<std::string>::iterator end) {
+std::vector<std::string>::iterator TextGen::select_randomly
+(std::vector<std::string>::iterator start, std::vector<std::string>::iterator end) {
     static std::random_device rd;
     static std::mt19937 gen(rd());
     return select_randomly(start, end, gen);
@@ -24,9 +26,9 @@ std::vector<std::string>::iterator TextGen::select_randomly(std::vector<std::str
 TextGen::TextGen(std::string filePath) {
     std::string line;
 
-    std::ifstream in(filePath); // окрываем файл для чтения
+    std::ifstream in(filePath);
     if (in.is_open()) {
-        while (std::getline(in, line));
+        while (std::getline(in, line)) {}
     } else {
         std::cout << "cant open" << "\n";
     }
@@ -70,7 +72,7 @@ std::string TextGen::Generate(int n) {
     std::string result;
     std::string curr = "start";
     
-    for(int i = 0; i < n;) {
+    for (int i = 0; i < n;) {
         curr = *select_randomly(states[curr].begin(), states[curr].end());
         if (curr == "end") {
             curr = "start";
