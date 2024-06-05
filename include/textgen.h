@@ -10,7 +10,7 @@ public:
     TextGen(std::string);
     std::map<std::string, std::vector<std::string>> states;
     std::string Generate(int n);
-    template<typename Iter> Iter select_randomly(Iter start, Iter end);
-    template<typename Iter, typename RandomGenerator> Iter select_randomly(Iter start, Iter end, RandomGenerator& g);
+    std::vector<std::string>::iterator TextGen::select_randomly(std::vector<std::string>::iterator start, std::vector<std::string>::iterator end);
+    std::vector<std::string>::iterator TextGen::select_randomly(std::vector<std::string>::iterator start, std::vector<std::string>::iterator end, static std::mt19937& g);
 };
 
