@@ -14,15 +14,13 @@ bool map_compare(std::map<std::string,std::vector<std::string>> &lhs, std::map<s
 
 TextGen tg("../../test1.txt");
 
-TEST(textGen, get_pref_test)
-{
+TEST(textGen, get_pref_test){
 	
 	size_t size = tg.states.size();
 	ASSERT_EQ(size,6);
 }
 
-TEST(textGen, get_pref_suf_test)
-{
+TEST(textGen, get_pref_suf_test){
 	std::map<std::string, std::vector<std::string>> handjob;
 
 	std::vector<std::string> states;
@@ -56,21 +54,18 @@ TEST(textGen, get_pref_suf_test)
 	ASSERT_EQ(iseq, true);
 }
 
-TEST(textGen, get_suf_test)
-{
+TEST(textGen, get_suf_test){
 	std::string next = *tg.states["b"].begin();
 	ASSERT_EQ(next,"c");
 }
 
-TEST(textGen, get_rand_suf_test)
-{
+TEST(textGen, get_rand_suf_test){
 	std::string next = *tg.TextGen::select_randomly(tg.states["a"].begin(), tg.states["a"].end());
 	bool test = next == "b" || next == "end";
 	ASSERT_TRUE(test);
 }
 
-TEST(textGen, get_generated_text_test)
-{
+TEST(textGen, get_generated_text_test){
 	std::map<std::string, std::vector<std::string>> handjob;
 
 	std::vector<std::string> states;
