@@ -4,7 +4,6 @@
 #include <map>
 #include <vector>
 #include <fstream>
-<<<<<<< HEAD
 #include <random>
 #include  <iterator>
 
@@ -21,14 +20,11 @@ Iter TextGen::select_randomly(Iter start, Iter end) {
     static std::mt19937 gen(rd());
     return select_randomly(start, end, gen);
 }
-=======
->>>>>>> fc4231577ac9569b0471ddcbfca1d48e80823d10
 
 TextGen::TextGen(std::string filePath)
 {
     std::string line;
 
-<<<<<<< HEAD
     std::ifstream in(filePath); // окрываем файл для чтения
     if (in.is_open())
     {
@@ -36,7 +32,7 @@ TextGen::TextGen(std::string filePath)
     }
     else {
         std::cout << "cant open" << "\n";
-=======
+
     std::ifstream in("input.txt"); // окрываем файл для чтения
     if (in.is_open())
     {
@@ -44,13 +40,11 @@ TextGen::TextGen(std::string filePath)
         {
             std::cout << line << std::endl;
         }
->>>>>>> fc4231577ac9569b0471ddcbfca1d48e80823d10
     }
     in.close();     // закрываем файл
 
     char separator = ' ';
     int i = 0;
-<<<<<<< HEAD
 
     std::vector<std::string> words;
 
@@ -62,7 +56,7 @@ TextGen::TextGen(std::string filePath)
             s += line[i];
         }
         else {
-=======
+
     
     std::vector<std::string> words;
 
@@ -73,14 +67,11 @@ TextGen::TextGen(std::string filePath)
             // Append the char to the temp string.
             s += line[i]; 
         } else {
->>>>>>> fc4231577ac9569b0471ddcbfca1d48e80823d10
             words.push_back(s);
             s.clear();
         }
         i++;
     }
-
-<<<<<<< HEAD
     words.push_back("end");
     auto it = words.insert(words.begin(), "start");
 
@@ -120,7 +111,6 @@ std::string TextGen::Generate(int n)
     }
 
     return result;
-=======
     for(int i = 0; i < words.size(); i++)
     {
         states[words[i]] = std::vector<std::string>();
@@ -130,5 +120,4 @@ std::string TextGen::Generate(int n)
 std::string Generate()
 {
     std::string result;
->>>>>>> fc4231577ac9569b0471ddcbfca1d48e80823d10
 }
