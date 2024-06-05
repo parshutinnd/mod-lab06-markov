@@ -4,8 +4,7 @@
 #include <map>
 #include <vector>
 
-class TextGen
-{
+class TextGen{
 private:
 public:
     TextGen(std::string);
