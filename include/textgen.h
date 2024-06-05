@@ -10,7 +10,7 @@
 class TextGen{
  private:
  public:
-     TextGen::TextGen(std::string);
+     TextGen(std::string);
      std::map<std::string, std::vector<std::string>> states;
      std::string Generate(int n);
      std::vector<std::string>::iterator
