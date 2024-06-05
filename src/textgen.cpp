@@ -116,8 +116,3 @@ std::string TextGen::Generate(int n)
         states[words[i]] = std::vector<std::string>();
     }
 }
-
-std::string Generate()
-{
-    std::string result;
-}
