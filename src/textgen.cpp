@@ -21,13 +21,11 @@ Iter TextGen::select_randomly(Iter start, Iter end) {
     return select_randomly(start, end, gen);
 }
 
-TextGen::TextGen(std::string filePath)
-{
+TextGen::TextGen(std::string filePath){
     std::string line;
 
     std::ifstream in(filePath); // окрываем файл для чтения
-    if (in.is_open())
-    {
+    if (in.is_open()){
         while (std::getline(in, line));
     }
     else {
@@ -57,16 +55,13 @@ TextGen::TextGen(std::string filePath)
     words.push_back("end");
     auto it = words.insert(words.begin(), "start");
 
-    for (int i = 0; i < words.size() - 1; i++)
-    {
+    for (int i = 0; i < words.size() - 1; i++){
         std::string elem = words[i];
-        if (states.count(elem) == 0)
-        {
+        if (states.count(elem) == 0){
             states[elem] = std::vector<std::string>();
             states[elem].push_back(words[i+1]);
         }
-        else
-        {
+        else{
             states[elem].push_back(words[i+1]);
         }
     }
@@ -74,10 +69,8 @@ TextGen::TextGen(std::string filePath)
     states["end"] = std::vector<std::string>();
 }
 
-std::string TextGen::Generate(int n)
-{
+std::string TextGen::Generate(int n){
     std::string result;
-
     std::string curr = "start";
     
     for(int i = 0; i < n;){
@@ -91,6 +84,5 @@ std::string TextGen::Generate(int n)
             i++;
         }
     }
-
     return result;
 }
