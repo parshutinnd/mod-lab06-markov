@@ -59,7 +59,8 @@ TEST(textGen, get_suf_test) {
 }
 
 TEST(textGen, get_rand_suf_test) {
-    std::string next = *tg.TextGen::select_randomly(tg.states["a"].begin(), tg.states["a"].end());
+    std::string next = *tg.TextGen::select_randomly(tg.states["a"].begin(),
+                                                    tg.states["a"].end());
     bool test = next == "b" || next == "end";
     ASSERT_TRUE(test);
 }
