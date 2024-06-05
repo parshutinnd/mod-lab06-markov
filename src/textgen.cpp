@@ -32,14 +32,6 @@ TextGen::TextGen(std::string filePath)
     }
     else {
         std::cout << "cant open" << "\n";
-
-    std::ifstream in("input.txt"); // окрываем файл для чтения
-    if (in.is_open())
-    {
-        while (std::getline(in, line))
-        {
-            std::cout << line << std::endl;
-        }
     }
     in.close();     // закрываем файл
 
@@ -56,22 +48,12 @@ TextGen::TextGen(std::string filePath)
             s += line[i];
         }
         else {
-
-    
-    std::vector<std::string> words;
-
-    // Temporary string used to split the string.
-    std::string s; 
-    while (line[i] != '\0') {
-        if (line[i] != separator) {
-            // Append the char to the temp string.
-            s += line[i]; 
-        } else {
             words.push_back(s);
             s.clear();
         }
         i++;
     }
+
     words.push_back("end");
     auto it = words.insert(words.begin(), "start");
 
@@ -98,21 +80,17 @@ std::string TextGen::Generate(int n)
 
     std::string curr = "start";
     
-    for(int i = 0; i < n; i++){
+    for(int i = 0; i < n;){
         curr = *select_randomly(states[curr].begin(), states[curr].end());
         if (curr == "end") {
             curr = "start";
-            i--;
         }
         else {
             result += " ";
             result += curr;
+            i++;
         }
     }
 
     return result;
-    for(int i = 0; i < words.size(); i++)
-    {
-        states[words[i]] = std::vector<std::string>();
-    }
 }
