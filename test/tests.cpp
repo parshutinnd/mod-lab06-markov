@@ -12,7 +12,7 @@ bool map_compare(std::map<std::string,std::vector<std::string>> &lhs, std::map<s
 			rhs.begin());
 }
 
-TextGen tg("../../test1.txt");
+TextGen tg("../test1.txt");
 
 TEST(textGen, get_pref_test){
 	
