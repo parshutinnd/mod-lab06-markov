@@ -7,7 +7,7 @@
 #include <random>
 #include  <iterator>
 
-std::vector<std::string>::iterator TextGen::select_randomly(std::vector<std::string>::iterator start, std::vector<std::string>::iterator end, static std::mt19937& g){
+std::vector<std::string>::iterator TextGen::select_randomly(std::vector<std::string>::iterator start, std::vector<std::string>::iterator end, std::mt19937& g){
     std::uniform_int_distribution<> dis(0, std::distance(start, end) - 1);
     std::advance(start, dis(g));
     return start;
