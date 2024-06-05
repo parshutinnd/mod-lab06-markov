@@ -72,7 +72,7 @@ TextGen::TextGen(std::string filePath) {
 
 std::string TextGen::Generate(int n) {
     std::string result;
-    std::string curr = "start"
+    std::string curr = "start";
 
     for (int i = 0; i < n;) {
         curr = *select_randomly(states[curr].begin(), states[curr].end());
