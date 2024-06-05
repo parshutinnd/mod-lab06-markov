@@ -1,5 +1,5 @@
 #include <iostream>
-#include "/textgen.h"
+#include "textgen.h"
 
 // Copyright 2024
 
