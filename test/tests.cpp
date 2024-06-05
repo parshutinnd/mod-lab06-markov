@@ -5,7 +5,7 @@
 #include <vector>
 #include "textgen.h"
 
-bool map_compare(std::map<std::string, std::vector<std::string>> &lhs
+bool map_compare(std::map<std::string, std::vector<std::string>> &lhs,
                  std::map<std::string, std::vector<std::string>> &rhs) {
     return lhs.size() == rhs.size()
     && std::equal(lhs.begin(), lhs.end(),
