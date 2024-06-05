@@ -18,6 +18,6 @@ class TextGen{
                      std::vector<std::string>::iterator end);
      std::vector<std::string>::iterator
      select_randomly(std::vector<std::string>::iterator start,
-     std::vector<std::string>::iterator end, std::mt19937& g);
+     std::vector<std::string>::iterator end, std::mt19937 g);
 };
 
