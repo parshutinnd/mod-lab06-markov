@@ -3,7 +3,7 @@
 #include <map>
 #include <string>
 #include <vector>
-#include "/textgen.h"
+#include "textgen.h"
 
 bool map_compare(std::map<std::string, std::vector<std::string>> &lhs
                 const std::map<std::string, std::vector<std::string>> &rhs) {
